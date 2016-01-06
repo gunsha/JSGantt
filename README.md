@@ -28,7 +28,10 @@ http://jsgantt.com/
 * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Task 
+# Changes so far
+
+## Task (new parameter pActionLink)
+```
 pID: (required) is a unique ID used to identify each row for parent functions and for setting dom id for hiding/showing
 pName: (required) is the task Label
 pStart: (required) the task start date, can enter empty date ('') for groups. You can also enter specific time (2/10/2008 12:00) for additional percision or half days.
@@ -45,13 +48,11 @@ pDepend: optional list of id's this task is dependent on ... line drawn from dep
 pCaption: optional caption that will be added after task bar if CaptionType set to "Caption"
 
 pActionLink optional //new, if value is 1 you can send any JS function to be executed onclick via pLink
-
+```
 *You should be able to add items to the chart in realtime via javascript and issuing "g.Draw()" command.
-
-# Changes so far
 ## Added support for multiple languages via jsgantt.lang.js
  just add your language on the file
- 
+ ```
  var vLang = {
 		"es":{
 			time : {hour:"Hora",hours:"Horas",minute:"Minuto",minutes:"Minutos",day:"Día",days:"Días"},
@@ -64,6 +65,7 @@ pActionLink optional //new, if value is 1 you can send any JS function to be exe
 			tableHead : {resource:"Resource",duration:"Duration",comp:"% Comp.",sDate:"Start Date",eDate:"End Date"}
 		}
 	};
+```
 by default it starts in English, to change simply add the language variable at the end of the initialization of the chart
 	
 	var g = new JSGantt.GanttChart('g',document.getElementById('GanttChartDIV'), 'day','es');	
@@ -73,20 +75,20 @@ by default it starts in English, to change simply add the language variable at t
 
 structure of JSON task
 
-{
-	pID = 0,
-	pName = "",
-	pStart = "",
-	pEnd = "",
-	pColor = '0000ff',
-	pLink = "",
-	pMile = 0,
-	pRes = "";,
-	pComp = 0;,
-	pGroup = 0;,
-	pParent = 0;,
-	pOpen = 1,
-	pDepend = "";,
-	pCaption = "",
-	pActionLink = 0
-}
+var task = {
+			pID = 0,
+			pName = "",
+			pStart = "",
+			pEnd = "",
+			pColor = '0000ff',
+			pLink = "",
+			pMile = 0,
+			pRes = "";,
+			pComp = 0;,
+			pGroup = 0;,
+			pParent = 0;,
+			pOpen = 1,
+			pDepend = "";,
+			pCaption = "",
+			pActionLink = 0
+		}
