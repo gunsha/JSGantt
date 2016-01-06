@@ -74,7 +74,7 @@ by default it starts in English, to change simply add the language variable at t
 ## Added support for parsing JSON tasks using parseJSON()
 
 structure of JSON task
-
+```
 var task = {
 			pID = 0,
 			pName = "",
@@ -92,3 +92,4 @@ var task = {
 			pCaption = "",
 			pActionLink = 0
 		}
+```
